@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6633a0b27df0cfeaca46b7a1"
+  },
+  "entrenador": "Ash",
+  "region": "Sur"
+},
+{
+  "_id": {
+    "$oid": "6633a0d27df0cfeaca46b7a3"
+  },
+  "entrenador": "Jóven",
+  "region": "Johto"
+}]

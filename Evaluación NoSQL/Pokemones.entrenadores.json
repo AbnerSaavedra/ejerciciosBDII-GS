@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "66339f347df0cfeaca46b79e"
+  },
+  "nombre": "Ash",
+  "pokedex": [
+    {
+      "pokemon": "Pikachu"
+    },
+    {
+      "pokemon": "Bulbasaur"
+    },
+    {
+      "pokemon": "Charmander"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66339fa57df0cfeaca46b79f"
+  },
+  "nombre": "Brock",
+  "pokedex": [
+    {
+      "pokemon": "Squirtle"
+    },
+    {
+      "pokemon": "Charmander"
+    },
+    {
+      "pokemon": "Snorlax"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6633a0207df0cfeaca46b7a0"
+  },
+  "nombre": "Misty",
+  "pokedex": [
+    {
+      "pokemon": "Snorlax"
+    },
+    {
+      "pokemon": "Squirtle"
+    },
+    {
+      "pokemon": "Bulbasaur"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6633a2317df0cfeaca46b7a4"
+  },
+  "nombre": "Jóven",
+  "pokedex": [
+    {
+      "pokemon": "Pikachu"
+    },
+    {
+      "pokemon": "Charmander"
+    },
+    {
+      "pokemon": "Snorlax"
+    }
+  ]
+}]

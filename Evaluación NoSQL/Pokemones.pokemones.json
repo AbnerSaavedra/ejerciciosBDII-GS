@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "66339cc67df0cfeaca46b799"
+  },
+  "nombre": "Pikachu",
+  "tipo": "Eléctrico"
+},
+{
+  "_id": {
+    "$oid": "66339cf47df0cfeaca46b79a"
+  },
+  "nombre": "Bulbasaur",
+  "tipo": "Planta, Veneno"
+},
+{
+  "_id": {
+    "$oid": "66339d267df0cfeaca46b79b"
+  },
+  "nombre": "Charmander",
+  "tipo": "Fuego"
+},
+{
+  "_id": {
+    "$oid": "66339d477df0cfeaca46b79c"
+  },
+  "nombre": "Squirtle",
+  "tipo": "Agua"
+},
+{
+  "_id": {
+    "$oid": "66339d757df0cfeaca46b79d"
+  },
+  "nombre": "Snorlax",
+  "tipo": "Normal"
+}]

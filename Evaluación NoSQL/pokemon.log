@@ -1,0 +1,132 @@
+test> use Pokemones
+switched to db Pokemones
+Pokemones> db.createCollection("pokemones")
+{ ok: 1 }
+Pokemones> db.pokemones.insert({nombre: "Pikachu", tipo: "Eléctrico"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339cc67df0cfeaca46b799') }
+}
+Pokemones> db.pokemones.insert({nombre: "Bulbasaur", tipo: "Planta, Veneno"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339cf47df0cfeaca46b79a') }
+}
+Pokemones> db.pokemones.insert({nombre: "Charmander", tipo: "Fuego"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339d267df0cfeaca46b79b') }
+}
+Pokemones> db.pokemones.insert({nombre: "Squirtle", tipo: "Agua"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339d477df0cfeaca46b79c') }
+}
+Pokemones> db.pokemones.insert({nombre: "Snorlax", tipo: "Normal"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339d757df0cfeaca46b79d') }
+}
+Pokemones> db.createCollection("entrenadores")
+{ ok: 1 }
+Pokemones> db.entrenadores.insert({nombre: "Ash", pokedex:[{pokemon: "Pikachu"}, {pokemon: "Bulbasaur"}, {pokemon: "Charmander"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339f347df0cfeaca46b79e') }
+}
+Pokemones> db.entrenadores.insert({nombre: "Brock", pokedex:[{pokemon: "Squirtle"}, {pokemon: "Charmander"}, {pokemon: "Snorlax"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('66339fa57df0cfeaca46b79f') }
+}
+Pokemones> db.entrenadores.insert({nombre: "Misty", pokedex:[{pokemon: "Snorlax"}, {pokemon: "Squirtle"}, {pokemon: "Bulbasaur"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6633a0207df0cfeaca46b7a0') }
+}
+Pokemones> db.createCollection("gimnasios_pokemon")
+{ ok: 1 }
+Pokemones> db.gimnasios_pokemon.insert({entrenador: "Ash", region: "Sur"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6633a0b27df0cfeaca46b7a1') }
+}
+Pokemones> db.gimnasios_pokemon.insert({entrenador: "Misty", region: "Norte"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6633a0c57df0cfeaca46b7a2') }
+}
+Pokemones> db.gimnasios_pokemon.insert({entrenador: "Brock", region: "Este"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6633a0d27df0cfeaca46b7a3') }
+}
+Pokemones> db.entrenadores.insert({nombre: "Jóven", pokedex:[{pokemon: "Pikachu"}, {pokemon: "Charmander"}, {pokemon: "Snorlax"}]})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6633a2317df0cfeaca46b7a4') }
+}
+Pokemones> db.gimnasios_pokemon.update({entrenador: "Brock"}, {$set:{entrenador: "Jóven", region: "Johto"}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+Pokemones> db.gimnasios_pokemon.deleteOne({entrenador: "Misty"})
+{ acknowledged: true, deletedCount: 1 }
+Pokemones> db.gimnasios_pokemon.find({region: "Johto"})
+[
+  {
+    _id: ObjectId('6633a0d27df0cfeaca46b7a3'),
+    entrenador: 'Jóven',
+    region: 'Johto'
+  }
+]
+
+Pokemones> db.entrenadores.find({nombre: "Ash"})
+[
+  {
+    _id: ObjectId('66339f347df0cfeaca46b79e'),
+    nombre: 'Ash',
+    pokedex: [
+      { pokemon: 'Pikachu' },
+      { pokemon: 'Bulbasaur' },
+      { pokemon: 'Charmander' }
+    ]
+  }
+]
+Pokemones> db.entrenadores.find({pokedex: [{ pokemon: 'Pikachu' }, { pokemon: 'Bulbasaur' }, { pokemon: 'Charmander' } ]})
+[
+  {
+    _id: ObjectId('66339f347df0cfeaca46b79e'),
+    nombre: 'Ash',
+    pokedex: [
+      { pokemon: 'Pikachu' },
+      { pokemon: 'Bulbasaur' },
+      { pokemon: 'Charmander' }
+    ]
+  }
+]
+Pokemones> db.entrenadores.find({pokedex: { pokemon: 'Pikachu' }})
+[
+  {
+    _id: ObjectId('66339f347df0cfeaca46b79e'),
+    nombre: 'Ash',
+    pokedex: [
+      { pokemon: 'Pikachu' },
+      { pokemon: 'Bulbasaur' },
+      { pokemon: 'Charmander' }
+    ]
+  },
+  {
+    _id: ObjectId('6633a2317df0cfeaca46b7a4'),
+    nombre: 'Jóven',
+    pokedex: [
+      { pokemon: 'Pikachu' },
+      { pokemon: 'Charmander' },
+      { pokemon: 'Snorlax' }
+    ]
+  }
