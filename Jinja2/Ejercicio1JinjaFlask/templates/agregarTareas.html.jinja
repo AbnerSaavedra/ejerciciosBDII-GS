@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar tareas a lista</title>
+</head>
+<body>
+    <form method="POST">
+        <div><label>Name: <input type="text" name="name"></label></div>
+        <div><label>Description: <input type="text" name="description"></label></div>
+        <input type="submit" value="Submit">
+    </form>
+    <p>{{mensaje}}</p>
+    {% if listaTareas[0] %}
+    <ul>
+        {% for tarea in listaTareas %} 
+            <li>
+                Name: {{tarea.name}}
+                Description {{tarea.description}}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

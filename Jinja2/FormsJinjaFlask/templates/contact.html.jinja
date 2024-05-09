@@ -1,0 +1,28 @@
+{% extends 'base.html.jinja' %}
+
+{% block content %}
+
+    <h1> {% block title %} Deja un mensaje {% endblock %}</h1>
+        <form method="POST">
+            <div>
+                <label for="title">Título del mensaje </label><br>
+                <input type="text" name="title" 
+                placeholder="Título del mensaje"
+                value="{{ request.form['title'] }}">
+                <br>
+            </div> 
+            <div>
+                <label for="content">Contenido del mensaje </label>
+                <br>
+                <textarea type="text" 
+                name="content"
+                placeholder="Contenido del mensaje"
+                rows="15"
+                cols="60">
+                    {{ request.form['content'] }}
+                </textarea>
+                <br>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+{% endblock %}

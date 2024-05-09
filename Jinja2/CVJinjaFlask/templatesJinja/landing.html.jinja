@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css"/>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+   <div class="content">
+    <div class="personalData">
+        <h2>Datos personales</h2>
+       <p>{{personalData.name}}</p> 
+       <p>{{personalData.address}}</p> 
+    </div>
+    <div class="worksExperience">
+        <h2>Experiencia laboral</h2>
+        {% for experience in workExperience %}
+        <div class="workExperience">
+            <h3>{{experience.title}}</h3>
+            <p>{{experience.factory}}</p> 
+            <p>{{experience.startDate}}-{{experience.endDate}}</p>
+            <ul>
+                {% for activity in experience.activities %}
+                    <li>{{activity}}</li>
+                {% endfor %}
+            </ul>  
+        </div>
+        {% endfor %}
+       <p>{{wrokExperience}}</p> 
+    </div>
+    <div class="academic">
+        <h2>Información academica</h2>
+       <p>{{academic}}</p> 
+    </div>
+    <div class="skills">
+        <h2>Habilidades</h2>
+       <p>{{skills}}</p> 
+    </div>
+   </div> 
+</body>
+</html>
