@@ -1,0 +1,16 @@
+{% extends 'base.html.jinja' %}
+
+{% block content %}
+<h1>{% block title %} Mi lista {% endblock %}</h1>
+    <ul>
+        {% for elemento in listaElementos %}
+        <li>
+           Nombre: {{ elemento.nombre }}
+        </li>
+        <li>
+           Edad: {{ elemento.edad }}
+        </li>
+        
+        {% endfor %}
+    </ul>
+{% endblock %}
