@@ -3,14 +3,10 @@
 {% block content %}
 <h1>{% block title %} Mi lista {% endblock %}</h1>
     <ul>
-        {% for elemento in listaElementos %}
+        {% for element in elementsList %}
         <li>
-           Nombre: {{ elemento.nombre }}
-        </li>
-        <li>
-           Edad: {{ elemento.edad }}
-        </li>
-        
+           Nombre: {{ element.nombre }} Edad: {{ element.edad }} <a href="/{{element._id}}">Detalle<a/> <a href="/update/{{element._id}}">Modificar<a/> <a href="/delete/{{element._id}}">Eliminar</a>
+        </li>        
         {% endfor %}
     </ul>
 {% endblock %}
