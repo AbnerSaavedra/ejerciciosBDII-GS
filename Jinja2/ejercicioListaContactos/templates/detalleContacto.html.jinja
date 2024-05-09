@@ -1,0 +1,22 @@
+{% extends 'base.html.jinja' %}
+
+{% block content %}
+<h1>{% block title %} Detalle de contacto {% endblock %}</h1>
+    <ul>
+        <li>
+           Nombre: {{ contacto.nombre }}
+        </li>
+        <li>
+           Apellido: {{ contacto.apellido }}
+        </li>
+        <li>
+           Teléfono: {{ contacto.telefono }}
+        </li>
+        <li>
+           Correo electrónico: {{ contacto.email }}
+        </li>
+        <li>
+           Dirección: {{ contacto.direccion }}
+        </li>
+    </ul>
+{% endblock %}

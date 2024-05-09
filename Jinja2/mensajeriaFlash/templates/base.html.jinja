@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('tasks')}}">My tasks</a>
+        <a href="{{url_for('about')}}">About me</a>
+        <a href="{{url_for('messages')}}">Messages</a>
+        <a href="{{url_for('contact')}}">Contact me</a>
+    </nav>
+    {% for message in get_flashed_messages() %}
+        <p style="color: red">
+            {{ message }}
+        </p>
+    {% endfor %}
+   <div class="content">
+    {% block content %} {% endblock %}
+   </div> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html.jinja' %}
+
+{% block content %}
+
+    <h1> {% block title %} Agrega un contacto {% endblock %}</h1>
+        <form method="POST">
+            <div>
+                <label for="nombre">Nombre </label><br>
+                <input type="text" name="nombre" 
+                placeholder="Nombre"
+                value="{{ request.form['nombre'] }}">
+                <br>
+            </div>
+            <div>
+                <label for="apellido">Apellido </label><br>
+                <input type="text" name="apellido" 
+                placeholder="Apellido"
+                value="{{ request.form['apellido'] }}">
+                <br>
+            </div> 
+            <div>
+                <label for="telefono">Teléfono </label><br>
+                <input type="text" name="telefono" 
+                placeholder="Teléfono"
+                value="{{ request.form['telefono'] }}">
+                <br>
+            </div> 
+            <div>
+                <label for="email">Corre electrónico </label><br>
+                <input type="email" name="email" 
+                placeholder="Corre electrónico"
+                value="{{ request.form['email'] }}">
+                <br>
+            </div> 
+            <div>
+                <label for="direccion">Dirección </label>
+                <br>
+                <textarea type="text" 
+                name="direccion"
+                placeholder="Dirección"
+                rows="15"
+                cols="60">
+                    {{ request.form['direccion'] }}
+                </textarea>
+                <br>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+{% endblock %}
