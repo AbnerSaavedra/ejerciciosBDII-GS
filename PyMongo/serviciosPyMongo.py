@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__, template_folder="./templates")
 app.config['SECRET_KEY'] = "clave secreta"
 
-elementsList = []
+#elementsList = []
 
 @app.route("/list", methods=["GET"])
 def getList():
@@ -47,7 +47,7 @@ def update_element(id):
 @app.route('/delete/<id>', methods=['GET'])
 def delete_element(id):
     oid = ObjectId(id)
-    element = collection.delete_one({'_id': oid})
+    collection.delete_one({'_id': oid})
     return redirect(url_for('getList'))
 
 if __name__ == "__main__":

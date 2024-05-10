@@ -2,8 +2,8 @@
 
 {% block content %}
 <h1>{% block title %} Detalle de contacto {% endblock %}</h1>
-    <ul>
-        <li>
-           Nombre: {{ element.nombre }} Edad: {{ element.edad }}</li>
-    </ul>
+    <div class="detail">
+        <p>Nombre: {{ element.nombre }}</p>
+        <p>Edad: {{ element.edad }}</p>
+    </div>
 {% endblock %}
